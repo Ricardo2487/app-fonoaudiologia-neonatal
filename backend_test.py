@@ -61,18 +61,18 @@ class FonoAudiologiaAPITester:
         
         try:
             if method == 'GET':
-                response = requests.get(url, headers=req_headers, timeout=30, cookies=self.get_cookies())
+                response = self.session.get(url, headers=req_headers, timeout=30)
             elif method == 'POST':
                 if use_form_data:
                     # For form data (auth endpoints)
-                    response = requests.post(url, data=data, headers=req_headers, timeout=30, cookies=self.get_cookies())
+                    response = self.session.post(url, data=data, headers=req_headers, timeout=30)
                 else:
                     # For JSON data
-                    response = requests.post(url, json=data, headers=req_headers, timeout=30, cookies=self.get_cookies())
+                    response = self.session.post(url, json=data, headers=req_headers, timeout=30)
             elif method == 'PUT':
-                response = requests.put(url, json=data, headers=req_headers, timeout=30, cookies=self.get_cookies())
+                response = self.session.put(url, json=data, headers=req_headers, timeout=30)
             elif method == 'DELETE':
-                response = requests.delete(url, headers=req_headers, timeout=30, cookies=self.get_cookies())
+                response = self.session.delete(url, headers=req_headers, timeout=30)
 
             success = response.status_code == expected_status
             
