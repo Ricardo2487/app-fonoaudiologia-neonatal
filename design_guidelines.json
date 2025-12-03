@@ -1,0 +1,148 @@
+{
+  "identity": {
+    "name": "E1",
+    "archetype": "The Anti-AI Designer",
+    "mission": "Create a 'Neuro-Harmonic' Speech Therapy SaaS that bridges clinical precision with Montessori-style warmth. Avoid sterile medical tropes.",
+    "principles": [
+      "Fusion: Medical Precision x Montessori Warmth",
+      "Emotion First: Every interaction reassures or motivates",
+      "Content is King: Data tells a patient's recovery story",
+      "Contrast: Soft backgrounds vs. Sharp data points"
+    ]
+  },
+  "typography": {
+    "headings": {
+      "family": "Manrope, sans-serif",
+      "weights": ["600", "800"],
+      "usage": "Used for all section titles, dashboard metrics, and hero text. Digits in Manrope are monospaced-friendly, perfect for data.",
+      "letterSpacing": "-0.02em"
+    },
+    "body": {
+      "family": "DM Sans, sans-serif",
+      "weights": ["400", "500", "700"],
+      "usage": "Used for long-form text, patient notes, and UI labels. High readability at small sizes."
+    },
+    "mono": {
+      "family": "JetBrains Mono, monospace",
+      "usage": "Used for clinical codes, timestamps, and technical data."
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "name": "Deep Periwinkle",
+        "hex": "#6366F1",
+        "usage": "Primary actions, active states, brand identity. Bridges medical (blue) and creative (purple)."
+      },
+      "secondary": {
+        "name": "Soft Sage",
+        "hex": "#10B981",
+        "usage": "Success states, progress indicators, positive reinforcement."
+      },
+      "accent": {
+        "name": "Electric Clay",
+        "hex": "#F97316",
+        "usage": "Notifications, urgent alerts, 'warm' highlights."
+      },
+      "neutral": {
+        "light": "#F9FAFB",
+        "dark": "#0B0C15",
+        "text_primary": "#111827",
+        "text_secondary": "#6B7280"
+      }
+    },
+    "theme_strategy": {
+      "light_mode": {
+        "background": "#F9FAFB",
+        "surface": "#FFFFFF",
+        "border": "#E5E7EB",
+        "vibe": "Clinical clarity, paper-like, approachable."
+      },
+      "dark_mode": {
+        "background": "#0B0C15",
+        "surface": "#1F2937",
+        "border": "#374151",
+        "vibe": "Deep focus, 'Control Room' for therapists working late."
+      }
+    }
+  },
+  "layout": {
+    "spacing_scale": [4, 8, 16, 24, 32, 48, 64, 96, 128],
+    "grid_systems": {
+      "marketing": {
+        "name": "The Tetris Grid",
+        "rules": "Use grid-cols-12. Mix col-span-4 (square), col-span-8 (hero), and col-span-6 (feature). Never equal columns."
+      },
+      "dashboard": {
+        "name": "The Control Room",
+        "rules": "Dense grid-cols-4. Widgets must stretch (h-full). No jagged bottoms. Use 'subgrid' where possible."
+      }
+    },
+    "container_padding": "px-6 md:px-12 lg:px-24"
+  },
+  "components": {
+    "buttons": {
+      "style": "Pill-shaped or slightly rounded (rounded-lg).",
+      "interaction": "Scale down slightly on click (active:scale-95). Hover lifts shadow."
+    },
+    "cards": {
+      "style": "Flat with subtle border in Light Mode. Glowing border in Dark Mode.",
+      "hover": "translate-y-[-2px] transition-transform duration-200"
+    },
+    "inputs": {
+      "style": "bg-transparent border-b-2 border-border focus:border-primary (Underline style) OR standard Shadcn input with rounded-lg."
+    },
+    "visual_enhancers": {
+      "glassmorphism": "backdrop-blur-xl bg-white/70 border border-white/20 (Light) / bg-black/60 border-white/10 (Dark)",
+      "gradients": "Use subtle 'mesh' gradients for hero backgrounds, never for buttons."
+    }
+  },
+  "motion": {
+    "presets": {
+      "breathing": "animate-pulse-slow (3s cycle)",
+      "entrance": "opacity-0 translate-y-4 -> opacity-100 translate-y-0 (staggered)",
+      "hover_lift": "hover:-translate-y-1 hover:shadow-lg transition-all"
+    },
+    "libraries": ["framer-motion"]
+  },
+  "assets": {
+    "images": {
+      "hero_patient": {
+        "url": "https://images.unsplash.com/photo-1750508720320-efd342adf07f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHxzcGVlY2glMjB0aGVyYXBpc3QlMjBjaGlsZCUyMHNlc3Npb24lMjBoYXBweXxlbnwwfHx8fDE3NjQ3OTQzODJ8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Playful boy with CD, vibrant yellow background",
+        "usage": "Main Landing Page Hero - evokes joy and breaking barriers."
+      },
+      "hero_therapist": {
+        "url": "https://images.unsplash.com/photo-1758691461916-dc7894eb8f94?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHx0ZWxlaGVhbHRoJTIwZG9jdG9yJTIwdmlkZW8lMjBjYWxsJTIwdGFibGV0fGVufDB8fHx8MTc2NDc5NDM4NXww&ixlib=rb-4.1.0&q=85",
+        "alt": "Senior doctor on video call",
+        "usage": "Therapist Dashboard or 'Join Network' section."
+      },
+      "feature_telehealth": {
+        "url": "https://images.unsplash.com/photo-1758691463610-3c2ecf5fb3fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHw0fHx0ZWxlaGVhbHRoJTIwZG9jdG9yJTIwdmlkZW8lMjBjYWxsJTIwdGFibGV0fGVufDB8fHx8MTc2NDc5NDM4NXww&ixlib=rb-4.1.0&q=85",
+        "alt": "Doctor with green screen tablet",
+        "usage": "Teleconsultation feature showcase."
+      },
+      "feature_audio": {
+        "url": "https://images.unsplash.com/photo-1617994452722-4145e196248b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxhdWRpbyUyMHNvdW5kJTIwd2F2ZSUyMHZpc3VhbGl6YXRpb24lMjBhYnN0cmFjdHxlbnwwfHx8fDE3NjQ3OTQzODd8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Blue sound wave abstract",
+        "usage": "Background for 'Voice Analysis' or 'Progress Diary' cards."
+      },
+      "logo_partner": {
+        "url": "https://images.unsplash.com/photo-1762939079730-23708c0dd337?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB0ZWNoJTIwY29tcGFueSUyMGxvZ28lMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY0Nzk0Mzg5fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Qc Med Logo",
+        "usage": "Partner/Sponsor section."
+      }
+    },
+    "icons": "Use 'lucide-react' for standard UI. Use 'phosphor-icons' (Duotone) for feature highlights."
+  },
+  "universal_guidelines": [
+    "DO NOT use generic 'medical blue' (#3B82F6). Use the custom Deep Periwinkle.",
+    "DO NOT center-align long text. Left align for readability.",
+    "ALWAYS add 'data-testid' to interactive elements.",
+    "Use 'sonner' for toasts, not default alerts.",
+    "Ensure 4.5:1 contrast ratio for all text.",
+    "Mobile images must be max-h-[80vh].",
+    "Avoid 'Inter' font for headings. Use 'Manrope'.",
+    "Create a 'Theme Toggle' in the navbar."
+  ]
+}
