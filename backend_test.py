@@ -106,7 +106,8 @@ class FonoAudiologiaAPITester:
             "POST",
             "/auth/register",
             200,
-            data=form_data
+            data=form_data,
+            use_form_data=True
         )
         
         if success:
