@@ -151,7 +151,8 @@ class FonoAudiologiaAPITester:
                 "POST",
                 "/auth/login", 
                 200,
-                data=form_data
+                data=form_data,
+                use_form_data=True
             )
             
             if success and 'user' in response:
