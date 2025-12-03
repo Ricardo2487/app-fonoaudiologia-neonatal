@@ -18,6 +18,11 @@ class FonoAudiologiaAPITester:
         self.tests_run = 0
         self.tests_passed = 0
         self.test_results = []
+        self.session = requests.Session()  # Use session to maintain cookies
+
+    def get_cookies(self):
+        """Get current session cookies"""
+        return self.session.cookies
 
     def log_test(self, name: str, success: bool, details: str = "", response_data: Any = None):
         """Log test result"""
