@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import AuthPage from './pages/AuthPage';
 import PatientDashboard from './pages/PatientDashboard';
+import TherapistDashboard from './pages/TherapistDashboard';
+import ExercisesPage from './pages/ExercisesPage';
 import { authService } from './utils/auth';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
