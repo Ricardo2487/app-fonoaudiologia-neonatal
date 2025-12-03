@@ -36,33 +36,38 @@ class FonoAudiologiaAPITester:
         })
 
     def run_test(self, name: str, method: str, endpoint: str, expected_status: int, 
-                 data: Optional[Dict] = None, headers: Optional[Dict] = None) -> tuple:
+                 data: Optional[Dict] = None, headers: Optional[Dict] = None, use_form_data: bool = False) -> tuple:
         """Run a single API test"""
         url = f"{self.base_url}/{endpoint.lstrip('/')}"
         
         # Default headers
-        req_headers = {'Content-Type': 'application/json'}
+        req_headers = {}
         if self.session_token:
             req_headers['Authorization'] = f'Bearer {self.session_token}'
         if headers:
             req_headers.update(headers)
+        
+        # Add Content-Type for JSON requests only
+        if not use_form_data and method in ['POST', 'PUT']:
+            req_headers['Content-Type'] = 'application/json'
 
         print(f"\n🔍 Testing {name}...")
         print(f"   URL: {url}")
         
         try:
             if method == 'GET':
-                response = requests.get(url, headers=req_headers, timeout=30)
+                response = requests.get(url, headers=req_headers, timeout=30, cookies=self.get_cookies())
             elif method == 'POST':
-                if isinstance(data, dict) and req_headers.get('Content-Type') == 'application/json':
-                    response = requests.post(url, json=data, headers=req_headers, timeout=30)
+                if use_form_data:
+                    # For form data (auth endpoints)
+                    response = requests.post(url, data=data, headers=req_headers, timeout=30, cookies=self.get_cookies())
                 else:
-                    # For form data
-                    response = requests.post(url, data=data, headers={k:v for k,v in req_headers.items() if k != 'Content-Type'}, timeout=30)
+                    # For JSON data
+                    response = requests.post(url, json=data, headers=req_headers, timeout=30, cookies=self.get_cookies())
             elif method == 'PUT':
-                response = requests.put(url, json=data, headers=req_headers, timeout=30)
+                response = requests.put(url, json=data, headers=req_headers, timeout=30, cookies=self.get_cookies())
             elif method == 'DELETE':
-                response = requests.delete(url, headers=req_headers, timeout=30)
+                response = requests.delete(url, headers=req_headers, timeout=30, cookies=self.get_cookies())
 
             success = response.status_code == expected_status
             
