@@ -26,7 +26,7 @@ export default function LandingPage({ onShowAuth }) {
                 <Button 
                   data-testid="get-started-btn"
                   size="lg" 
-                  className="bg-primary text-white hover:bg-primary/90 rounded-lg px-8 py-6 text-lg"
+                  className="bg-primary text-white hover:bg-primary/90 rounded-lg px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
                   onClick={onShowAuth}
                 >
                   Começar Agora
@@ -35,7 +35,7 @@ export default function LandingPage({ onShowAuth }) {
                   data-testid="learn-more-btn"
                   size="lg" 
                   variant="outline" 
-                  className="rounded-lg px-8 py-6 text-lg"
+                  className="rounded-lg px-8 py-6 text-lg border-2 border-gray-800 dark:border-white hover:bg-gray-100 dark:hover:bg-gray-800 font-semibold"
                 >
                   Saiba Mais
                 </Button>
