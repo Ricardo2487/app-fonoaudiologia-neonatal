@@ -13,6 +13,8 @@ from datetime import datetime, timezone, timedelta
 import bcrypt
 import aiohttp
 from emergentintegrations.llm.chat import LlmChat, UserMessage
+from emergentintegrations.llm.openai import OpenAITextToSpeech
+import base64
 
 
 ROOT_DIR = Path(__file__).parent
