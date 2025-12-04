@@ -132,6 +132,50 @@ class Appointment(BaseModel):
     notes: Optional[str] = None
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
+class NeonatalAssessment(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    patient_id: str
+    therapist_id: str
+    assessment_date: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    
+    # Dados do Bebê
+    gestational_age: Optional[str] = None  # Ex: "32 semanas"
+    birth_weight: Optional[str] = None  # Ex: "1.8kg"
+    apgar_score: Optional[str] = None  # Ex: "7/9"
+    
+    # UTI Neonatal
+    nicu_stay: bool = False
+    nicu_days: Optional[int] = None
+    ventilation_support: Optional[str] = None  # intubação, CPAP, cateter nasal
+    feeding_tube: bool = False
+    
+    # Testes Obrigatórios
+    hearing_test_done: bool = False  # Teste da Orelhinha
+    hearing_test_result: Optional[str] = None
+    tongue_tie_test_done: bool = False  # Teste da Linguinha
+    tongue_tie_result: Optional[str] = None
+    
+    # Avaliação de Funções
+    sucking_ability: Optional[str] = None  # forte, fraca, ausente
+    swallowing_ability: Optional[str] = None  # normal, dificuldade, disfagia
+    breathing_pattern: Optional[str] = None  # normal, irregular, dificuldade
+    breastfeeding_status: Optional[str] = None  # exclusivo, misto, fórmula
+    
+    # Dificuldades Observadas
+    aspiration_risk: bool = False
+    feeding_difficulties: Optional[str] = None
+    oral_motor_issues: Optional[str] = None
+    
+    # Plano de Tratamento
+    treatment_plan: Optional[str] = None
+    family_guidance: Optional[str] = None
+    followup_schedule: Optional[str] = None
+    
+    # Observações
+    notes: Optional[str] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 
 # ============ AUTH DEPENDENCY ============
 async def get_current_user(request: Request) -> User:
