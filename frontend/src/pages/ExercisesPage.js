@@ -165,7 +165,7 @@ export default function ExercisesPage({ user }) {
       {/* Exercise Detail Dialog */}
       {selectedExercise && (
         <Dialog open={showDialog} onOpenChange={setShowDialog}>
-          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-white dark:bg-gray-800" style={{ backgroundColor: 'white' }}>
             <DialogHeader>
               <DialogTitle className="text-2xl">{selectedExercise.title}</DialogTitle>
               <DialogDescription>{selectedExercise.description}</DialogDescription>
