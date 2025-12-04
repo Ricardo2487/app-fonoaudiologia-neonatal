@@ -175,6 +175,30 @@ function AppContent() {
             )
           } 
         />
+        <Route 
+          path="/neonatal" 
+          element={
+            user ? (
+              <main className="container mx-auto px-6 md:px-12 lg:px-24 py-8">
+                <NeonatalList user={user} />
+              </main>
+            ) : (
+              <Navigate to="/auth" />
+            )
+          } 
+        />
+        <Route 
+          path="/neonatal/create" 
+          element={
+            user && (user.role === 'therapist' || user.role === 'admin') ? (
+              <main className="container mx-auto px-6 md:px-12 lg:px-24 py-8">
+                <NeonatalAssessment user={user} />
+              </main>
+            ) : (
+              <Navigate to="/auth" />
+            )
+          } 
+        />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Toaster position="top-right" richColors />
