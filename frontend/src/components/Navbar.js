@@ -89,7 +89,11 @@ export default function Navbar({ user, onLogout }) {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Button data-testid="nav-login-btn" onClick={() => navigate('/auth')}>
+              <Button 
+                data-testid="nav-login-btn" 
+                onClick={() => navigate('/auth')}
+                className="bg-primary text-white hover:bg-primary/90 font-semibold"
+              >
                 Entrar
               </Button>
             )}
