@@ -13,6 +13,8 @@ import CreateTherapyPlan from './pages/CreateTherapyPlan';
 import CreatePatient from './pages/CreatePatient';
 import ProgressDiary from './pages/ProgressDiary';
 import AppointmentsPage from './pages/AppointmentsPage';
+import NeonatalList from './pages/NeonatalList';
+import NeonatalAssessment from './pages/NeonatalAssessment';
 import { authService } from './utils/auth';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
