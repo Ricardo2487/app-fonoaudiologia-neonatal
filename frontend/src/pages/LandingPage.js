@@ -26,7 +26,8 @@ export default function LandingPage({ onShowAuth }) {
                 <Button 
                   data-testid="get-started-btn"
                   size="lg" 
-                  className="bg-primary text-white hover:bg-primary/90 rounded-lg px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                  style={{ backgroundColor: '#6366F1', color: 'white' }}
+                  className="hover:opacity-90 rounded-lg px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
                   onClick={onShowAuth}
                 >
                   Começar Agora
