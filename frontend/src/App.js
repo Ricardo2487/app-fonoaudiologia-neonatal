@@ -7,7 +7,11 @@ import LandingPage from './pages/LandingPage';
 import AuthPage from './pages/AuthPage';
 import PatientDashboard from './pages/PatientDashboard';
 import TherapistDashboard from './pages/TherapistDashboard';
+import AdminDashboard from './pages/AdminDashboard';
 import ExercisesPage from './pages/ExercisesPage';
+import CreateTherapyPlan from './pages/CreateTherapyPlan';
+import CreatePatient from './pages/CreatePatient';
+import ProgressDiary from './pages/ProgressDiary';
 import { authService } from './utils/auth';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
