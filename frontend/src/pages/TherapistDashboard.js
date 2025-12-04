@@ -137,15 +137,15 @@ export default function TherapistDashboard({ user }) {
               <CardTitle>Ações Rápidas</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <Button data-testid="create-plan-btn" variant="outline" className="w-full justify-start">
+              <Button data-testid="create-plan-btn" variant="outline" className="w-full justify-start" onClick={() => window.location.href = '/create-plan'}>
                 <Activity className="w-4 h-4 mr-2" />
                 Criar Plano de Terapia
               </Button>
-              <Button data-testid="create-exercise-btn" variant="outline" className="w-full justify-start">
+              <Button data-testid="create-exercise-btn" variant="outline" className="w-full justify-start" onClick={() => window.location.href = '/exercises'}>
                 <BookOpen className="w-4 h-4 mr-2" />
                 Criar Exercício
               </Button>
-              <Button data-testid="schedule-appointment-btn" variant="outline" className="w-full justify-start">
+              <Button data-testid="schedule-appointment-btn" variant="outline" className="w-full justify-start" onClick={() => window.location.href = '/appointments'}>
                 <Calendar className="w-4 h-4 mr-2" />
                 Agendar Consulta
               </Button>
