@@ -153,6 +153,17 @@ export default function TherapistDashboard({ user }) {
                 <Brain className="w-4 h-4 mr-2" />
                 Recomendações IA
               </Button>
+              <Button 
+                data-testid="neonatal-btn" 
+                variant="outline" 
+                className="w-full justify-start bg-purple-50 dark:bg-purple-950 hover:bg-purple-100 border-purple-200"
+                onClick={() => window.location.href = '/neonatal'}
+              >
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                </svg>
+                Fonoaudiologia Neonatal
+              </Button>
             </CardContent>
           </Card>
 
