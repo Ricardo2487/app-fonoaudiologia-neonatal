@@ -26,12 +26,15 @@ async def seed_database():
     exercises = [
         {
             "id": str(uuid.uuid4()),
-            "title": "Exercício do Som /R/",
-            "description": "Pratique a pronúncia correta do som /R/ em diferentes posições",
+            "title": "Exercício do Som /R/ com Vídeo",
+            "description": "Pratique a pronúncia correta do som /R/ em diferentes posições com vídeo demonstrativo",
             "category": "fonema",
             "difficulty_level": "médio",
-            "media_urls": ["https://images.unsplash.com/photo-1617994452722-4145e196248b"],
-            "instructions": "1. Posicione a língua no céu da boca\n2. Vibre a ponta da língua\n3. Repita: rato, carro, porta, ferro\n4. Pratique 10 repetições de cada palavra",
+            "media_urls": [
+                "https://www.youtube.com/embed/7IZsKQg71P8",
+                "https://images.unsplash.com/photo-1617994452722-4145e196248b"
+            ],
+            "instructions": "1. ASSISTA O VÍDEO primeiro\n2. Posicione a língua no céu da boca\n3. Vibre a ponta da língua\n4. Repita: rato, carro, porta, ferro\n5. Pratique 10 repetições de cada palavra\n6. Grave seu áudio e compare com o vídeo",
             "estimated_time": 15,
             "frequency": "3x por semana",
             "created_by": "admin",
