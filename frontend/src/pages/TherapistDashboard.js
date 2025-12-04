@@ -95,7 +95,7 @@ export default function TherapistDashboard({ user }) {
                   <CardTitle>Meus Pacientes</CardTitle>
                   <CardDescription>Lista de pacientes ativos</CardDescription>
                 </div>
-                <Button data-testid="add-patient-btn">+ Novo Paciente</Button>
+                <Button data-testid="add-patient-btn" onClick={() => window.location.href = '/create-patient'}>+ Novo Paciente</Button>
               </div>
             </CardHeader>
             <CardContent>
