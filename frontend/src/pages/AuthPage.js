@@ -109,7 +109,7 @@ export default function AuthPage({ onSuccess }) {
                 <Button 
                   data-testid="login-submit-btn"
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white rounded-lg py-6"
+                  className="w-full bg-primary hover:bg-primary/90 text-white rounded-lg py-6 font-semibold"
                   disabled={loading}
                 >
                   {loading ? 'Entrando...' : 'Entrar'}
