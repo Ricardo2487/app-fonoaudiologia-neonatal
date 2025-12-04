@@ -209,15 +209,15 @@ export default function PatientDashboard({ user }) {
               <CardTitle>Ações Rápidas</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <Button data-testid="add-progress-btn" variant="outline" className="w-full justify-start">
+              <Button data-testid="add-progress-btn" variant="outline" className="w-full justify-start" onClick={() => window.location.href = '/progress'}>
                 <Activity className="w-4 h-4 mr-2" />
                 Registrar Progresso
               </Button>
-              <Button data-testid="browse-exercises-btn" variant="outline" className="w-full justify-start">
+              <Button data-testid="browse-exercises-btn" variant="outline" className="w-full justify-start" onClick={() => window.location.href = '/exercises'}>
                 <BookOpen className="w-4 h-4 mr-2" />
                 Biblioteca de Exercícios
               </Button>
-              <Button data-testid="view-history-btn" variant="outline" className="w-full justify-start">
+              <Button data-testid="view-history-btn" variant="outline" className="w-full justify-start" onClick={() => window.location.href = '/progress'}>
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Meu Progresso
               </Button>
