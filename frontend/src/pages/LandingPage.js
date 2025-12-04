@@ -63,42 +63,49 @@ export default function LandingPage({ onShowAuth }) {
       <section className="py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Recursos Poderosos</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Tudo que você precisa para uma terapia fonoaudiológica moderna e eficaz
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Transforme Vidas com Tecnologia</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Cada palavra que uma criança consegue pronunciar, cada som que se torna mais claro, 
+              é uma vitória compartilhada. Nossa plataforma está aqui para tornar essa jornada mais eficaz e acolhedora.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <FeatureCard 
               icon={<Brain className="w-8 h-8" />}
-              title="IA Inteligente"
-              description="Recomendações personalizadas de exercícios baseadas em IA"
+              title="IA que Entende Cada Paciente"
+              description="Nossa inteligência artificial analisa o histórico, diagnóstico e progresso para sugerir exercícios personalizados. Como ter um assistente especializado disponível 24/7."
+              highlight="Recomendações em tempo real"
             />
             <FeatureCard 
               icon={<Activity className="w-8 h-8" />}
-              title="Exercícios Multimídia"
-              description="Biblioteca completa com vídeos, áudios e materiais didáticos"
+              title="Exercícios que Engajam"
+              description="Vídeos demonstrativos, áudios guiados e instruções passo a passo. Cada exercício foi pensado para ser claro, motivador e efetivo."
+              highlight="6+ exercícios prontos"
             />
             <FeatureCard 
               icon={<Calendar className="w-8 h-8" />}
-              title="Agenda Integrada"
-              description="Gerencie consultas e teleconsultas em um só lugar"
+              title="Nunca Perca uma Consulta"
+              description="Agende presencialmente ou online com confirmação automática. Receba lembretes e tenha acesso direto à sala de teleconsulta com um clique."
+              highlight="Lembretes automáticos"
             />
             <FeatureCard 
               icon={<TrendingUp className="w-8 h-8" />}
-              title="Acompanhamento"
-              description="Diário de progresso detalhado com análise de evolução"
+              title="Veja a Evolução Acontecendo"
+              description="Registre áudios, vídeos e observações diárias. Gráficos visuais mostram o progresso ao longo do tempo, celebrando cada conquista."
+              highlight="Gráficos e relatórios"
             />
             <FeatureCard 
               icon={<Video className="w-8 h-8" />}
-              title="Teleconsultas"
-              description="Atendimento online com qualidade profissional"
+              title="Atendimento de Onde Estiver"
+              description="Teleconsultas com qualidade profissional. Perfeito para quem tem agenda corrida ou mora longe do consultório."
+              highlight="Sala de vídeo integrada"
             />
             <FeatureCard 
               icon={<Users className="w-8 h-8" />}
-              title="Multi-perfil"
-              description="Pacientes, fonoaudiólogos e administradores em uma plataforma"
+              title="Todos Conectados"
+              description="Pacientes acompanham seu progresso, fonoaudiólogos criam planos personalizados, administradores gerenciam a clínica. Tudo sincronizado."
+              highlight="3 perfis diferentes"
             />
           </div>
         </div>
