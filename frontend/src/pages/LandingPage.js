@@ -156,18 +156,19 @@ export default function LandingPage({ onShowAuth }) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary text-white">
+      <section style={{ backgroundColor: '#6366F1' }} className="py-24 text-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: 'white' }}>
             Pronto para Começar?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.95)' }}>
             Junte-se a centenas de profissionais e pacientes que já transformaram sua terapia fonoaudiológica
           </p>
           <Button 
             data-testid="cta-start-btn"
             size="lg" 
-            className="bg-white text-primary hover:bg-gray-50 rounded-lg px-8 py-6 text-lg font-bold shadow-2xl hover:shadow-xl hover:scale-105 transition-all"
+            style={{ backgroundColor: 'white', color: '#6366F1' }}
+            className="hover:opacity-90 rounded-lg px-8 py-6 text-lg font-bold shadow-2xl hover:scale-105 transition-all"
             onClick={onShowAuth}
           >
             Criar Conta Grátis
