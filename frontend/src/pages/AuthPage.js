@@ -181,7 +181,8 @@ export default function AuthPage({ onSuccess }) {
                 <Button 
                   data-testid="register-submit-btn"
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary/90 text-white rounded-lg py-6 font-semibold"
+                  style={{ backgroundColor: '#6366F1', color: 'white' }}
+                  className="w-full hover:opacity-90 rounded-lg py-6 font-semibold shadow-lg"
                   disabled={loading}
                 >
                   {loading ? 'Criando conta...' : 'Criar Conta'}
