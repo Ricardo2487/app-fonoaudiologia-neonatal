@@ -99,7 +99,9 @@ function AppContent() {
           element={
             user ? (
               <main className="container mx-auto px-6 md:px-12 lg:px-24 py-8">
-                {user.role === 'therapist' || user.role === 'admin' ? (
+                {user.role === 'admin' ? (
+                  <AdminDashboard user={user} />
+                ) : user.role === 'therapist' ? (
                   <TherapistDashboard user={user} />
                 ) : (
                   <PatientDashboard user={user} />
