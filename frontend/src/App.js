@@ -130,10 +130,7 @@ function AppContent() {
           element={
             user ? (
               <main className="container mx-auto px-6 md:px-12 lg:px-24 py-8">
-                <div className="text-center py-20">
-                  <h1 className="text-3xl font-bold mb-4">Minhas Consultas</h1>
-                  <p className="text-gray-600 dark:text-gray-400">Em desenvolvimento...</p>
-                </div>
+                <AppointmentsPage user={user} />
               </main>
             ) : (
               <Navigate to="/auth" />
