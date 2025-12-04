@@ -65,9 +65,21 @@ export default function AuthPage({ onSuccess }) {
           </div>
 
           <Tabs value={isLogin ? 'login' : 'register'} onValueChange={(v) => setIsLogin(v === 'login')}>
-            <TabsList className="grid w-full grid-cols-2 mb-6">
-              <TabsTrigger value="login" data-testid="login-tab">Login</TabsTrigger>
-              <TabsTrigger value="register" data-testid="register-tab">Cadastro</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 mb-6 bg-gray-100 dark:bg-gray-700 p-1">
+              <TabsTrigger 
+                value="login" 
+                data-testid="login-tab"
+                className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 font-semibold"
+              >
+                Login
+              </TabsTrigger>
+              <TabsTrigger 
+                value="register" 
+                data-testid="register-tab"
+                className="data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-700 dark:data-[state=inactive]:text-gray-300 font-semibold"
+              >
+                Cadastro
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="login">
