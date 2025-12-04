@@ -139,6 +139,42 @@ function AppContent() {
             )
           } 
         />
+        <Route 
+          path="/create-plan" 
+          element={
+            user && (user.role === 'therapist' || user.role === 'admin') ? (
+              <main className="container mx-auto px-6 md:px-12 lg:px-24 py-8">
+                <CreateTherapyPlan user={user} />
+              </main>
+            ) : (
+              <Navigate to="/auth" />
+            )
+          } 
+        />
+        <Route 
+          path="/create-patient" 
+          element={
+            user && (user.role === 'therapist' || user.role === 'admin') ? (
+              <main className="container mx-auto px-6 md:px-12 lg:px-24 py-8">
+                <CreatePatient user={user} />
+              </main>
+            ) : (
+              <Navigate to="/auth" />
+            )
+          } 
+        />
+        <Route 
+          path="/progress" 
+          element={
+            user ? (
+              <main className="container mx-auto px-6 md:px-12 lg:px-24 py-8">
+                <ProgressDiary user={user} />
+              </main>
+            ) : (
+              <Navigate to="/auth" />
+            )
+          } 
+        />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Toaster position="top-right" richColors />
