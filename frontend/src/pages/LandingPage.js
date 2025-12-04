@@ -166,7 +166,7 @@ export default function LandingPage({ onShowAuth }) {
           <Button 
             data-testid="cta-start-btn"
             size="lg" 
-            className="bg-white text-primary hover:bg-gray-100 rounded-lg px-8 py-6 text-lg"
+            className="bg-white text-primary hover:bg-gray-50 rounded-lg px-8 py-6 text-lg font-bold shadow-2xl hover:shadow-xl hover:scale-105 transition-all"
             onClick={onShowAuth}
           >
             Criar Conta Grátis
