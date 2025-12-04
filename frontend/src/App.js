@@ -12,6 +12,7 @@ import ExercisesPage from './pages/ExercisesPage';
 import CreateTherapyPlan from './pages/CreateTherapyPlan';
 import CreatePatient from './pages/CreatePatient';
 import ProgressDiary from './pages/ProgressDiary';
+import AppointmentsPage from './pages/AppointmentsPage';
 import { authService } from './utils/auth';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
