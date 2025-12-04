@@ -186,7 +186,7 @@ export default function LandingPage({ onShowAuth }) {
   );
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description, highlight }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -198,7 +198,12 @@ function FeatureCard({ icon, title, description }) {
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-400">{description}</p>
+      <p className="text-gray-600 dark:text-gray-400 mb-3">{description}</p>
+      {highlight && (
+        <div className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-sm font-medium rounded-full">
+          ✓ {highlight}
+        </div>
+      )}
     </motion.div>
   );
 }
