@@ -200,10 +200,35 @@ export default function ExercisesPage({ user }) {
               {selectedExercise.media_urls && selectedExercise.media_urls.length > 0 && (
                 <div>
                   <h3 className="font-semibold mb-2">Material de Apoio:</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    {selectedExercise.media_urls.map((url, i) => (
-                      <img key={i} src={url} alt={`Media ${i + 1}`} className="rounded-lg w-full h-32 object-cover" />
-                    ))}
+                  <div className="space-y-4">
+                    {selectedExercise.media_urls.map((url, i) => {
+                      // Check if it's a YouTube video
+                      if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                        return (
+                          <div key={i} className="aspect-video w-full rounded-lg overflow-hidden">
+                            <iframe
+                              width="100%"
+                              height="100%"
+                              src={url}
+                              title={`Vídeo ${i + 1}`}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="w-full h-full"
+                            ></iframe>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <img 
+                            key={i} 
+                            src={url} 
+                            alt={`Media ${i + 1}`} 
+                            className="rounded-lg w-full h-48 object-cover" 
+                          />
+                        );
+                      }
+                    })}
                   </div>
                 </div>
               )}
