@@ -200,37 +200,41 @@ function PricingCard({ title, price, period, features, featured }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`p-8 rounded-2xl ${
+      className={`p-8 rounded-2xl relative ${
         featured 
-          ? 'bg-primary text-white shadow-2xl transform scale-105' 
-          : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700'
+          ? 'bg-gradient-to-br from-primary to-primary/90 text-white shadow-2xl transform scale-105 border-2 border-white/20' 
+          : 'bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700'
       }`}
     >
       {featured && (
-        <div className="text-sm font-semibold mb-2 opacity-90">MAIS POPULAR</div>
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+          <div className="bg-secondary text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+            MAIS POPULAR
+          </div>
+        </div>
       )}
-      <h3 className="text-2xl font-bold mb-2">{title}</h3>
+      <h3 className="text-2xl font-bold mb-2 mt-2">{title}</h3>
       <div className="mb-6">
         <span className="text-4xl font-bold">{price}</span>
-        <span className={featured ? 'opacity-90' : 'text-gray-600 dark:text-gray-400'}>
+        <span className={featured ? 'text-white/90' : 'text-gray-600 dark:text-gray-400'}>
           {period}
         </span>
       </div>
       <ul className="space-y-3 mb-8">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2">
-            <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <svg className={`w-5 h-5 mt-0.5 flex-shrink-0 ${featured ? 'text-white' : 'text-green-500'}`} fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
-            <span className={featured ? 'opacity-90' : ''}>{feature}</span>
+            <span className={featured ? 'text-white/95' : 'text-gray-700 dark:text-gray-300'}>{feature}</span>
           </li>
         ))}
       </ul>
       <Button 
         data-testid={`pricing-${title.toLowerCase()}-btn`}
-        className={`w-full rounded-lg py-6 ${
+        className={`w-full rounded-lg py-6 font-semibold text-base shadow-lg hover:shadow-xl transition-all ${
           featured 
-            ? 'bg-white text-primary hover:bg-gray-100' 
+            ? 'bg-white text-primary hover:bg-gray-50 hover:scale-105' 
             : 'bg-primary text-white hover:bg-primary/90'
         }`}
       >
