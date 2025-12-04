@@ -666,6 +666,56 @@ async def generate_audio(text: str = Form(...), voice: str = Form("nova")):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# ============ NEONATAL ASSESSMENT ROUTES ============
+@api_router.get("/neonatal-assessments")
+async def get_neonatal_assessments(current_user: User = Depends(get_current_user)):
+    """Get all neonatal assessments"""
+    if current_user.role == "patient":
+        patient = await db.patients.find_one({"user_id": current_user.id})
+        if not patient:
+            return []
+        assessments = await db.neonatal_assessments.find({"patient_id": patient["id"]}, {"_id": 0}).to_list(1000)
+    else:
+        assessments = await db.neonatal_assessments.find({}, {"_id": 0}).to_list(1000)
+    return assessments
+
+@api_router.get("/neonatal-assessments/{assessment_id}")
+async def get_neonatal_assessment(assessment_id: str, current_user: User = Depends(get_current_user)):
+    """Get specific neonatal assessment"""
+    assessment = await db.neonatal_assessments.find_one({"id": assessment_id}, {"_id": 0})
+    if not assessment:
+        raise HTTPException(status_code=404, detail="Assessment not found")
+    return assessment
+
+@api_router.post("/neonatal-assessments")
+async def create_neonatal_assessment(assessment: NeonatalAssessment, current_user: User = Depends(get_current_user)):
+    """Create new neonatal assessment"""
+    if current_user.role not in ["therapist", "admin"]:
+        raise HTTPException(status_code=403, detail="Not authorized")
+    
+    assessment_dict = assessment.model_dump()
+    assessment_dict["assessment_date"] = assessment_dict["assessment_date"].isoformat()
+    assessment_dict["created_at"] = assessment_dict["created_at"].isoformat()
+    
+    await db.neonatal_assessments.insert_one(assessment_dict)
+    return assessment
+
+@api_router.put("/neonatal-assessments/{assessment_id}")
+async def update_neonatal_assessment(
+    assessment_id: str, 
+    updates: dict, 
+    current_user: User = Depends(get_current_user)
+):
+    """Update neonatal assessment"""
+    if current_user.role not in ["therapist", "admin"]:
+        raise HTTPException(status_code=403, detail="Not authorized")
+    
+    result = await db.neonatal_assessments.update_one({"id": assessment_id}, {"$set": updates})
+    if result.modified_count == 0:
+        raise HTTPException(status_code=404, detail="Assessment not found")
+    return {"message": "Assessment updated successfully"}
+
+
 # Include the router in the main app
 app.include_router(api_router)
 
