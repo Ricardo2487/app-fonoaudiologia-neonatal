@@ -92,7 +92,8 @@ export default function Navbar({ user, onLogout }) {
               <Button 
                 data-testid="nav-login-btn" 
                 onClick={() => navigate('/auth')}
-                className="bg-primary text-white hover:bg-primary/90 font-semibold"
+                style={{ backgroundColor: '#6366F1', color: 'white' }}
+                className="hover:opacity-90 font-semibold px-6 py-2 shadow-md"
               >
                 Entrar
               </Button>
