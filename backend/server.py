@@ -605,6 +605,23 @@ async def get_stats(current_user: User = Depends(get_current_user)):
     }
 
 
+# ============ TTS ROUTES ============
+@api_router.post("/tts/generate")
+async def generate_audio(text: str = Form(...), voice: str = Form("nova")):
+    """Generate audio from text using OpenAI TTS"""
+    try:
+        tts = OpenAITextToSpeech(api_key=os.environ.get('EMERGENT_LLM_KEY'))
+        audio_base64 = await tts.generate_speech_base64(
+            text=text,
+            model="tts-1",
+            voice=voice
+        )
+        return {"audio_base64": audio_base64}
+    except Exception as e:
+        logging.error(f"TTS error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 # Include the router in the main app
 app.include_router(api_router)
 
