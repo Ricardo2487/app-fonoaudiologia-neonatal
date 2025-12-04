@@ -37,11 +37,11 @@ export default function Navbar({ user, onLogout }) {
     <nav className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 sticky top-0 z-50">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+          <Link to="/" className="flex items-center gap-3">
+            <div style={{ backgroundColor: '#6366F1' }} className="w-10 h-10 rounded-lg flex items-center justify-center shadow-md">
               <span className="text-white font-bold text-xl">F</span>
             </div>
-            <span className="text-xl font-bold">FonoMed</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">FonoMed</span>
           </Link>
 
           <div className="flex items-center gap-4">
