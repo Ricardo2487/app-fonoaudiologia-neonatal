@@ -104,10 +104,10 @@ export default function LandingPage({ onShowAuth }) {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 gradient-mesh">
+      <section className="py-24 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Planos para Todos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Planos para Todos</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Escolha o plano ideal para você
             </p>
