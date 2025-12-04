@@ -204,7 +204,7 @@ export default function AuthPage({ onSuccess }) {
             data-testid="google-login-btn"
             type="button"
             variant="outline"
-            className="w-full rounded-lg py-6 flex items-center justify-center gap-2"
+            className="w-full rounded-lg py-6 flex items-center justify-center gap-2 border-2 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold"
             onClick={handleGoogleLogin}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
